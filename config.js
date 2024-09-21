@@ -10,9 +10,9 @@ ALIVE_IMG: process.env.ALIVE_IMG || "https://imgtr.ee/images/2024/09/17/37f9be86
 ALIVE_MSG: process.env.ALIVE_MSG || "Hello I'm alive now",
 AUTO_READ_STATUS: process.env.AUTO_READ_STATUS || "true",
 MODE: process.env.MODE || "public",
-SUDO_NB: process.env.SUDO_NB || "94704227534",
-OWNER_NAME: process.env.OWNER_NAME || "Nethmika MAIN",
-BOT_NAME: process.env.BOT_NAME || "NETHU-MD",
+SUDO_NB: process.env.SUDO_NB || "923030329329",
+OWNER_NAME: process.env.OWNER_NAME || "*وســــــیم❥مــــــغل⚘*",
+BOT_NAME: process.env.BOT_NAME || "♕︎🇼ꪖs͜͡𝖎ꪑ☠︎ضدی مــــــغل♡♕︎",
 AUTO_VOICE: process.env.AUTO_VOICE || "true"
 
 };
