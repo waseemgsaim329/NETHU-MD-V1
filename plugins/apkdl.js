@@ -1,24 +1,55 @@
-const config = require('../config')
-const {cmd , commands} = require('../command')
-const { fetchJson } = require('../lib/functions')
-
+const { tlang, botpic, cmd, prefix, runtime, Config, formatp, fetchJson } = require('../lib')
+const { download} = require('aptoide-scraper')
 cmd({
-    pattern: "apkdl",
-    alias: ["modapk"],
-    desc: "download apks",
-    category: "download",
+    pattern: "apk",
+    alias: ["ps","downapk","playstore"],
+    desc: "download playstore app",
+    react: "📥",
+    category: "downloader",
     filename: __filename,
-    react: "📦"
 },
-async(conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply }) => {
-    try {
-        if (!q && !q.startsWith("https://")) return reply("❗αρк ησт ƒσυη∂,ѕσяяу")
-        //fetch data from api  
-        let data = await fetchJson(`${baseUrl}/api/apkdl?url=${q}`)
-        reply("*Downloader...*")
-        await conn.sendMessage(from, { document: { url: data.data.link_1 }, fileName: data.data.name, mimetype: data.data.file_type, caption: cap }, { quoted: mek })                                                                                                                 
-    } catch (e) {
-        console.log(e)
-        reply(`Cant Find`)
-    }
+async (Void, citel, text) => {
+if (!text) return
+try {
+let result = await download(text)
+ const applink = result.dllink
+    const getname = result.name
+    const icon = result.icon
+    const lastupdate = result.lastup
+    const packagename = result.package
+    const size = result.size
+      await Void.sendMessage(citel.chat, {
+        image: {
+            url: icon,
+        },
+        caption: `
+        \n ✧ *KING VAJIRA APP DOWNLOADER*
+        \n━━━━━━━━━━━━━━━━━━
+        
+        \n ┇📚 *ᴀᴘᴘ ɴᴀᴍᴇ:* ${getname}
+        
+        \n ┇⬆️ *ʟᴀꜱᴛ ᴜᴘᴅᴀᴛᴇ:* ${lastupdate}
+        
+        \n ┇💻 *ᴘᴀᴄᴋᴀɢᴇ ɴᴀᴍᴇ:* ${packagename}
+        
+        \n ┇📊 *ꜰɪʟᴇ ꜱɪᴢᴇ:* ${size}
+        
+        \n ❭ *ᴋɪɴɢ ᴠᴀᴊɪʀᴀ ᴍᴅ ° ᴄʀᴇᴀᴛᴇᴅ ʙʏ ᴠᴀᴊɪʀᴀ*`,
+    })
+    return Void.sendMessage(citel.chat, {
+        document: {
+            url: applink,
+        },
+        mimetype: "application/vnd.android.package-archive",
+        fileName: getname,
+        caption: `👑 *ᴋɪɴɢ ᴠᴀᴊɪʀᴀ ᴍᴅ ᴠ1*
+👩‍💻 *ᴄʀᴇᴀᴛᴇᴅ ʙʏ ᴠᴀᴊɪʀᴀ*`,
+    }, {
+        quoted: citel,
+    });
+  } catch (err) {
+    console.error(err);
+    citel.reply(` *❌ An error occurred while processing your request. Please try again later.* ${err}`);
+  }
 })
+  //---------------------------------------------------------------------------
