@@ -18,14 +18,15 @@ const deta = search.videos[0];
 const url = deta.url 
 
 let desc= `
- *🎶𝗡𝗘𝗧𝗛𝗨 𝗠𝗗 𝗔𝗨𝗗𝗜𝗢 𝗗𝗢𝗪𝗡𝗟𝗢𝗔𝗗𝗘𝗥🎶*
- __________________________
-| ℹ️ *title* : *${deta.title}*
-| 📋 *description* : *${deta.description}*
-| 🕘 *time* : *${deta.timestamp}*
-| 📌 *ago* : *${deta.ago}*
-| 📉 *views* : *${deta.views}*
-|__________________________
+> *✦ 𝗡𝗘𝗧𝗛𝗨 𝗠𝗗 𝗔𝗨𝗗𝗜𝗢 𝗗𝗢𝗪𝗡𝗟𝗢𝗔𝗗𝗘𝗥 ✦*
+ 
+> ➤ *title* : ${deta.title}
+
+> ➤ *views* : ${deta.views}
+
+> ➤ *time* : ${deta.timestamp}
+
+> ➤ *ago* : ${deta.ago}
 
 > *ᴘᴏᴡᴇʀᴇᴅ ʙʏ ɴᴇᴛʜᴍɪᴋᴀ ᴍᴀɪɴ*
 
@@ -68,14 +69,16 @@ const deta = search.videos[0];
 const url = deta.url 
 
 let desc= `
-*📽🎬𝗡𝗘𝗧𝗛𝗨 𝗠𝗗 𝗩𝗜𝗗𝗘𝗢 𝗗𝗢𝗪𝗡𝗟𝗢𝗔𝗗𝗘𝗥🎬*
- __________________________
-| ℹ️ *title* : *${deta.title}*
-| 📋 *description* : *${deta.description}*
-| 🕘 *time* : *${deta.timestamp}*
-| 📌 *ago* : *${deta.ago}*
-| 📉 *views* : *${deta.views}*
-|__________________________
+> *✦ 𝗡𝗘𝗧𝗛𝗨 𝗠𝗗 𝗩𝗜𝗗𝗘𝗢 𝗗𝗢𝗪𝗡𝗟𝗢𝗔𝗗𝗘𝗥 ✦*
+
+  
+> ➤ *title* : ${deta.title}
+
+> ➤ *views* : ${deta.views}
+
+> ➤ *time* : ${deta.timestamp}
+
+> ➤ *ago* : ${deta.ago}
 
 > *ᴘᴏᴡᴇʀᴇᴅ ʙʏ ɴᴇᴛʜᴍɪᴋᴀ ᴍᴀɪɴ*
 
